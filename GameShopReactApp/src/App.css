@@ -1,0 +1,88 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  background-color: dodgerblue;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  color: white;
+}
+
+header>h1 {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+footer {
+  position: fixed;
+  top: 95%;
+  width: 100%;
+  height: 5%;
+  background-color: rgb(3, 6, 7);
+}
+
+footer>p {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}
+
+aside {
+  position: absolute;
+  text-align: left;
+  top: 10%;
+  width: 15%;
+  height: 90%;
+
+}
+
+section {
+  position: absolute;
+  width: 90%;
+  height: 85%;
+  top: 10%;
+  left: 15%;
+  bottom: 5%;
+  text-align: left;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+body{
+  background-color: white;
+}
+
+button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background: dodgerblue;
+}
+
+.submitButton {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background: dodgerblue;
+}

@@ -1,0 +1,43 @@
+{
+    "categoryList": [ "Rockstar", "Origin", "Steam", "EpicGames"],
+    
+    "productList": [ 
+        {
+            "id": "0",
+            "category": "Rockstar",
+            "name": "GTA V",
+            "price": "139",
+            "description": "Good Game",
+            "link": "gta5.jpg"
+        },
+
+        {
+            "id": "1",
+            "category": "Steam",
+            "name": "Witcher 3",
+            "price": "49",
+            "description": "Fun to play",
+            "link": "witcher3.jpg"
+        },
+        
+        {
+            "id": "2",
+            "category": "Origin",
+            "name": "Starwars Fallen Order",
+            "price": "459",
+            "description": "Good Game Lucas",
+            "link": "starwars.jpg"
+        },
+
+        {
+            "id": "3",
+            "category": "Steam",
+            "name": "Among US",
+            "price": "19",
+            "description": "Crewmate",
+            "link": "amongus.jpg"
+        }
+
+    ]
+
+}
