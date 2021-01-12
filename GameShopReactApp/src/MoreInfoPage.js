@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 
-import GetInfo from "../Info/GetInfo";
-import data from "../data.json";
+import GetInfo from "./Components/GetInfo";
+import data from "./data.json";
 
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
 
 
 const productData = data.productList;

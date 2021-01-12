@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 // Other Imports
 import './App.css';
 import data from './data.json';
-import MoreInfoPage from "./Info/MoreInfoPage";
+import MoreInfoPage from "./MoreInfoPage";
 import { Button } from 'react-bootstrap';
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
