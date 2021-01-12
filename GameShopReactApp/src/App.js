@@ -5,6 +5,11 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 // Other Imports
 import './App.css';
 import data from './data.json';
+import MoreInfoPage from "./Info/MoreInfoPage";
+import { Button } from 'react-bootstrap';
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+
 
 // Data
 const categoryData = data.categoryList;
@@ -51,19 +56,30 @@ class Shop extends Component
       <div id="shop">
         <h2>Shop</h2>
           {productData.filter((product) =>!(active_filters.includes(product.category))).map((product, i) => (
-            <form key={i} id={product.name} action="/info.html">
-              <p>{product.name}</p> 
+            <form key={i} id={product.name}>
+              <p>{product.name}</p>
               <p>Category: {product.category}</p>
               <p>Price: {product.price}</p>
-              <input type="submit" value="Info" className="submitButton"></input>
+
+                <Button variant="btn btn-success" onClick={()=>buttonAction(product)}>More Info</Button>
+
+
               <br></br>
               <br></br>
+
               <img src={process.env.PUBLIC_URL + "/images/"+product.link} alt={product.name}/>
             </form>
           ))}
       </div>
     );
+
   }
+}
+function buttonAction(props){
+    localStorage.setItem("id",props.id)
+    {<MoreInfoPage/>}
+    window.location.href="/moreInfoPage"
+
 }
 
 
@@ -152,6 +168,8 @@ class Basket extends Component
 }
 
 
+
+
 /*
  * App
  * Child Components: Home, Login, Basket
@@ -163,19 +181,11 @@ class App extends Component {
   render() {
     return (
 
-      <Router>
+      <Router >
 
         <div>
 
-        <header id="navigation">
-
-          <h1>Game Shop</h1>
-
-          <Link to="/">Home </Link>
-          <Link to="/basket">Basket </Link>
-          <Link to="/login">Login</Link>
-
-        </header>
+        <Header />
 
         <Switch>
 
@@ -185,11 +195,11 @@ class App extends Component {
 
            <Route exact path="/login"><Login/></Route>
 
+            <Route path="/moreInfoPage" component={MoreInfoPage}/>
+
         </Switch>
 
-        <footer className="shop_footer">
-          <p> Best games for best prices</p>
-        </footer>
+        <Footer/>
          
         </div>
 
