@@ -60,6 +60,8 @@ class Shop extends Component
               <p>{product.name}</p>
               <p>Category: {product.category}</p>
               <p>Price: {product.price}</p>
+                <img src={process.env.PUBLIC_URL + "/images/"+product.link} alt={product.name}/>
+
 
                 <Button variant="btn btn-success" onClick={()=>buttonAction(product)}>More Info</Button>
 
@@ -67,7 +69,7 @@ class Shop extends Component
               <br></br>
               <br></br>
 
-              <img src={process.env.PUBLIC_URL + "/images/"+product.link} alt={product.name}/>
+
             </form>
           ))}
       </div>
