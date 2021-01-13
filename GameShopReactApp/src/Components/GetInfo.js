@@ -1,11 +1,10 @@
 import React from "react"
 
-import Header from "./Header";
+
 
 
 
 function GetInfo(props){
-console.log(props.product.name)
 
     return (
         <div>
@@ -24,10 +23,12 @@ console.log(props.product.name)
         </article>
 
         <br/>
-            <img src={process.env.PUBLIC_URL + "/images/"+props.product.link} alt={props.product.name}/>
+
+            <img src={process.env.PUBLIC_URL + "/images/"+props.product.link} alt="Responsive image"/>
 
 
         <form action="http://localhost:3000/moreInfo.html" method="post">
+            {/*calls add to basket function and alerts the user*/}
             <button type="button" onClick={()=>{AddToBasket(); alert('Added to basket');}}>Add to basket</button>
 
         </form>
@@ -38,7 +39,7 @@ console.log(props.product.name)
 }
 
 
-
+//add to bakset function
 function AddToBasket() {
 
     const products = localStorage.getItem("product");

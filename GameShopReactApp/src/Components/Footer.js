@@ -5,11 +5,18 @@ function Footer(){
 
 
     return(
-        <div>
-            <footer className="shop_footer">
-                <p> Best games for best prices</p>
-            </footer>
-        </div>)
+        //old footer
+        // <div>
+        //     <footer className="shop_footer">
+        //         <p> Best games for best prices</p>
+        //     </footer>
+        // </div>
+
+        <footer className="footer mt-auto py-3 bg-dark">
+            <div className="container">
+                <span className="text-muted">Best games for best prices</span>
+            </div>
+        </footer>)
 }
 
 

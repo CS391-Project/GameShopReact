@@ -4,11 +4,9 @@ import React, { Component } from 'react';
 import GetInfo from "./Components/GetInfo";
 import data from "./data.json";
 
-import Footer from "./Components/Footer";
-import Header from "./Components/Header";
-
 
 const productData = data.productList;
+
 
 
 
@@ -17,24 +15,22 @@ class MoreInfoPage extends Component {
 
     render() {
 
+
         return (
+
             <div>
-                <Header />
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+                {/*send item attributes and get it in html format*/}
                 <GetInfo product = {item()} />
-                <Footer/>
             </div>
 
 
         );
+
     }
 }
 
 
-
+//retrun selected item
 function item(){
     var id = localStorage.getItem("id")
 
