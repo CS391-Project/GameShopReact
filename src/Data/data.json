@@ -7,7 +7,7 @@
             "category": "Rockstar",
             "name": "GTA V",
             "price": "139",
-            "description": "Good Game",
+            "description": "ABOUT THIS GAME When a young street hustler, a retired bank robber and a terrifying psychopath find themselves entangled with some of the most frightening and deranged elements of the criminal underworld, the U.S. government and the entertainment industry, they must pull off a series of dangerous heists to survive in a ruthless city in which they can trust nobody, least of all each other. Grand Theft Auto V for PC offers players the option to explore the award-winning world of Los Santos and Blaine County in resolutions of up to 4k and beyond, as well as the chance to experience the game running at 60 frames per second.The game offers players a huge range of PC-specific customization options, including over 25 separate configurable settings for texture quality, shaders, tessellation, anti-aliasing and more, as well as support and extensive customization for mouse and keyboard controls. Additional options include a population density slider to control car and pedestrian traffic, as well as dual and triple monitor support, 3D compatibility, and plug-and-play controller support.",
             "link": "gta5.jpg"
         },
 
@@ -16,7 +16,7 @@
             "category": "Steam",
             "name": "Witcher 3",
             "price": "49",
-            "description": "Fun to play",
+            "description": "The Witcher: Wild Hunt is a story-driven open world RPG set in a visually stunning fantasy universe full of meaningful choices and impactful consequences. In The Witcher, you play as professional monster hunter Geralt of Rivia tasked with finding a child of prophecy in a vast open world rich with merchant cities, pirate islands, dangerous mountain passes, and forgotten caverns to explore.",
             "link": "witcher3.jpg"
         },
         
@@ -25,7 +25,7 @@
             "category": "Origin",
             "name": "Starwars Fallen Order",
             "price": "459",
-            "description": "Good Game Lucas",
+            "description": "A galaxy-spanning adventure awaits in Star Wars Jedi: Fallen Order, a new third-person action-adventure title from Respawn Entertainment. This narratively driven, single-player game puts you in the role of a Jedi Padawan who narrowly escaped the purge of Order 66 following the events of Episode 3: Revenge of the Sith. On a quest to rebuild the Jedi Order, you must pick up the pieces of your shattered past to complete your training, develop new powerful Force abilities and master the art of the iconic lightsaber - all while staying one step ahead of the Empire and its deadly Inquisitors.",
             "link": "starwars.jpg"
         },
 
@@ -34,7 +34,7 @@
             "category": "Steam",
             "name": "Among US",
             "price": "19",
-            "description": "Crewmate",
+            "description": "Play with 4-10 player online or via local WiFi as you attempt to prepare your spaceship for departure, but beware as one or more random players among the Crew are Impostors bent on killing everyone!",
             "link": "amongus.jpg"
         }
 

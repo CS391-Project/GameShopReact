@@ -14,8 +14,21 @@ html, body {
 /*  color: white;*/
 /*}*/
 
+/*responsive elements of more info page*/
+@media (max-width: 479px) {
+  .infodiv{
+    font-size: 30px;
+  }
+}
 
-/*footer*/
+@media (min-width: 720px) {
+  .infodiv {
+
+    font-size: 30px;
+  }
+}
+
+
 .container {
   width: auto;
   max-width: 680px;
@@ -35,13 +48,10 @@ footer {
   width: 100%;
   height: 5%;
   background-color: rgb(3, 6, 7);
-}
-
-footer>p {
-  color: white;
-  font-size: 15px;
   text-align: center;
 }
+
+
 
 aside {
   position: absolute;
@@ -61,6 +71,7 @@ section {
   bottom: 5%;
   text-align: left;
 }
+
 
 img {
   width: 300px;
