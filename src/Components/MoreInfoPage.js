@@ -17,9 +17,11 @@ function item() {
 
 const MoreInfoPage = () => {
     return (
-        <div>
+        <div class="infodiv">
             {/*send item attributes and get it in html format*/}
             <GetInfo product={item()}/>
+            <br/>
+            <br/>
         </div>
     );
 }

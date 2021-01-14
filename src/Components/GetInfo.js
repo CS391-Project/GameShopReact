@@ -21,6 +21,9 @@ const GetInfo = (props) => {
                 <br/>
 
                 <img src={process.env.PUBLIC_URL + "/images/"+props.product.link} alt="Responsive image"/>
+                <br/>
+                <br/>
+                <br/>
 
                 <form action="http://localhost:3000/moreInfo.html" method="post">
                     {/*calls add to basket function and alerts the user*/}
