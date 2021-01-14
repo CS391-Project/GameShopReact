@@ -1,78 +1,70 @@
-# Game Shop
+# Getting Started with Create React App
 
-This repository was created for CS 391 course project 2.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-| Member | Task |
-| ------- | ----- |
-| Cenker Karaörs | Creation of home page. |
-| Denizcan Özpınar | Creation of item information page. |
-| Ertan Ayanlar | Creation of shopping cart. |
-| Furkan Karayer | Login page and design improvments
+## Available Scripts
 
-## What is Game Shop?
+In the project directory, you can run:
 
-Game Shop is a simple website that you can purchase recent games. Our website has 4 pages. These pages include a shop, basket, login, and item information page. Users can register using their emails and admins can empty local storage from the login page using the special code 1234. On the shop page, users can view products and filter vendors from the sidebar. In Game Shop users can display information of the desired games using the info button and can add multiple games to the shopping basket (Same or different games). After choosing the basket from the navigation users can remove any item from the basket and complete their purchases from the checkout button.
+### `npm start`
 
-## Environment
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Visual Studio Code and Google Chrome browser is used for development.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## User Manual
+### `npm test`
 
-Step 1:  Download files in the repository
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-> Type git clone https://github.com/CS391-Project/GameShopReact or download related codes via Code button in github.
+### `npm run build`
 
-Step 2: Open game_Shop.html on your browser
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-> Usage of Google Chrome and Firefox are recommended.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Sample Usage Scenarios
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Case 1:
+### `npm run eject`
 
-> Open game_Shop.html
->
-> Select desired products using the Info button
->
-> Click on Add to basket
->
-> Choose Basket from the navigation
->
-> Click on Checkout for purchase of selected items
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Case 2:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-> Open game_Shop.html
->
-> Filter desired categories using checkboxes
->
-> Click on the Apply Filter button
->
-> Select desired products using the Info button
->
-> Click on Add to basket ( Same product can be added to basket multiple times)
->
-> Choose Basket from the navigation
->
-> Click on the remove button to remove the desired product
->
-> Click on Checkout for complete purchase of selected items
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Note for contributors
+## Learn More
 
-Dear members, please use branches to contribute. (Do not forget to pull recent changes before updating)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## React Commands
-1) npx create-react-app my-app (Sample App Creation Only)
-2) cd GameShopReactApp
-3) npm start
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
-## Git Commands
-1) git add .
-2) git commit -m "message"
-3) git checkout -b branchName
-4) git push -u origin branchName
-5) Create new pull request in github
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
