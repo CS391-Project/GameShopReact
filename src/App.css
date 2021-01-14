@@ -15,6 +15,24 @@ html, body {
 /*}*/
 
 /*responsive elements of more info page*/
+
+
+.fullwidth {
+  width: 100%;
+
+}
+.caption {
+  width: 100%;
+}
+header {
+  padding-bottom: 15px;
+}
+
+
+.thumbnail {
+  padding-bottom: 20px;
+}
+
 @media (max-width: 479px) {
   .infodiv{
     font-size: 30px;
@@ -52,7 +70,6 @@ footer {
 }
 
 
-
 aside {
   position: absolute;
   text-align: left;
@@ -80,6 +97,7 @@ img {
 
 body{
   background-color: white;
+  margin-bottom: 160px !important;
 }
 
 button {

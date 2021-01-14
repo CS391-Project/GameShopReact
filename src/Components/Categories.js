@@ -1,22 +1,25 @@
 import React from "react"
-import {Button} from "reactstrap";
+import {Button, Col, Container, Row} from "reactstrap";
 import data from "../Data/data.json";
+import Shop from "./Shop";
 
 const categoryData = data.categoryList;
 
 const Categories = (props) => {
     return (
-        <div id="categories">
+        <Container fluid={true} id="categories">
             <h2>Categories</h2>
             {categoryData.map((category, i) => (
-                <div key={i}>
-                    <input type="checkbox" className="filter" id={category} value={category}></input>
-                    <label htmlFor={category}>{category}</label>
-                    <br></br>
-                </div>
+                <Row key={i} className="form-check">
+                    <input type="checkbox" className="form-check-input filter" id={category} value={category}/>
+                    <label className="form-check-label" htmlFor={category}>{category}</label>
+                </Row>
             ))}
-            <Button onClick={props.apply_filter}>Apply Filter</Button>
-        </div>
+            <Row className='pt-3'>
+                <Button onClick={props.apply_filter}>Apply Filter</Button>
+            </Row>
+
+        </Container>
     );
 }
 
