@@ -25,6 +25,3 @@ const MoreInfoPage = () => {
 }
 
 export default MoreInfoPage
-
-
-
