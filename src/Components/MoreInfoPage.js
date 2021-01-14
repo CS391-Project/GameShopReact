@@ -4,18 +4,7 @@ import data from "../Data/data.json";
 
 const productData = data.productList;
 
-class MoreInfoPage extends Component {
-    render() {
-        return (
-            <div>
-                {/*send item attributes and get it in html format*/}
-                <GetInfo product={item()}/>
-            </div>
-        );
-    }
-}
-
-//retrun selected item
+// return selected item
 function item() {
     var id = localStorage.getItem("id")
 
@@ -26,4 +15,16 @@ function item() {
     }
 }
 
-export default MoreInfoPage;
+const MoreInfoPage = () => {
+    return (
+        <div>
+            {/*send item attributes and get it in html format*/}
+            <GetInfo product={item()}/>
+        </div>
+    );
+}
+
+export default MoreInfoPage
+
+
+
