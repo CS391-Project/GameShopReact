@@ -15,10 +15,6 @@ const Shop = (props) => {
         goToPage('moreInfoPage')
     }
 
-    const shopToBasket = (props) => {
-        localStorage.setItem("id", props.id)
-    }
-
     return (
         <div id="shop">
             <h2>Shop</h2>

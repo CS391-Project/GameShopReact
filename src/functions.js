@@ -20,6 +20,7 @@ export const addToBasket = (product) => {
     localStorage.setItem("product", text);
 
     alert('Added to basket !')
+
 }
 
 // return selected item
