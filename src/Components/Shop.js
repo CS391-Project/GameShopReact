@@ -26,10 +26,10 @@ const Shop = (props) => {
                                      alt={product.name} className="img-responsive p-3"/>
                                 <div className="caption">
                                     <Row>
-                                        <Col md="6" xs="6">
+                                        <Col md="6" xs="6" sm="6">
                                             <h3>{product.name}</h3>
                                         </Col>
-                                        <Col md="6" xs="6" className="price">
+                                        <Col md="6" xs="6" sm="6" className="price">
                                             <h3>
                                                 <label>{product.price} TL</label>
                                             </h3>

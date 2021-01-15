@@ -1,42 +1,29 @@
 import React from "react"
+import {Col, Container, Row} from "reactstrap";
 
 
 const GetInfo = (props) => {
     return (
-        <div>
-
-            <article>
-                <br/>
-                <br/>
-
-                <h1> Name: {props.product.name} </h1>
-                <h2>Price: {props.product.price} </h2>
-                <h2> Category: {props.product.category} </h2>
-                <br/>
-                <article>
-                    <br/>
-                    <p >Description: {props.product.description}</p>
-                </article>
-
-                <br/>
-
-                <img src={process.env.PUBLIC_URL + "/images/"+props.product.link} alt="Responsive image"/>
-                <br/>
-                <br/>
-                <br/>
-
-                <form action="http://localhost:3000/moreInfo.html" method="post">
-                    {/*calls add to basket function and alerts the user*/}
-                    <button type="button" onClick={()=>{AddToBasket(); alert('Added to basket');}}>Add to basket</button>
-
-                </form>
-
-            </article>
-        </div>
+        <Container>
+            <Row>
+                <Col sm="12" md="6">
+                    <img src={process.env.PUBLIC_URL + "/images/"+props.product.link} alt="Responsive image"/>
+                </Col>
+                <Col sm="12" md="6">
+                    <h1> Name: {props.product.name} </h1>
+                    <h2>Price: {props.product.price} </h2>
+                    <h2> Category: {props.product.category} </h2>
+                    <button type="button" className='mt-5' onClick={()=>{AddToBasket(); alert('Added to basket');}}>Add to basket</button>
+                </Col>
+            </Row>
+            <Row className='pt-4'>
+                <p>{props.product.description}</p>
+            </Row>
+        </Container>
     );
 }
 
-//add to bakset function
+//add to basket function
 function AddToBasket() {
 
     const products = localStorage.getItem("product");
