@@ -1,5 +1,5 @@
 {
-    "categoryList": [ "Rockstar", "Origin", "Steam", "EpicGames"],
+    "categoryList": [ "Rockstar", "Origin", "Steam", "Epic Games"],
     
     "productList": [ 
         {
@@ -23,7 +23,7 @@
         {
             "id": "2",
             "category": "Origin",
-            "name": "Starwars Fallen Order",
+            "name": "Starwars Jedi",
             "price": "459",
             "description": "A galaxy-spanning adventure awaits in Star Wars Jedi: Fallen Order, a new third-person action-adventure title from Respawn Entertainment. This narratively driven, single-player game puts you in the role of a Jedi Padawan who narrowly escaped the purge of Order 66 following the events of Episode 3: Revenge of the Sith. On a quest to rebuild the Jedi Order, you must pick up the pieces of your shattered past to complete your training, develop new powerful Force abilities and master the art of the iconic lightsaber - all while staying one step ahead of the Empire and its deadly Inquisitors.",
             "link": "starwars.jpg"

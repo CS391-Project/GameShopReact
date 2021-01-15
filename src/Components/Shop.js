@@ -1,8 +1,7 @@
 import React from "react"
-import {Media, Button} from "reactstrap";
+import {Button, Col, Container, Row} from "reactstrap";
 import data from "../Data/data.json";
 import {useHistory} from "react-router-dom";
-import {Container, Row, Col} from 'reactstrap';
 import * as functions from "../functions";
 
 const Shop = (props) => {
@@ -25,7 +24,7 @@ const Shop = (props) => {
                     }
 
                     {productData.filter((product) => !(props.activeFilters.includes(product.category))).map((product, i) => (
-                        <Col sm="6" md="4">
+                        <Col sm="6" md="4" key={product.id}>
                             <Row className="thumbnail">
                                 <img src={process.env.PUBLIC_URL + "/images/" + product.link}
                                      alt={product.name} className="img-responsive p-3"/>
@@ -47,7 +46,7 @@ const Shop = (props) => {
                                         <Button onClick={() => goToMoreInfoPage(product)} className="mt-3 btn btn-info btn-product text-nowrap" >More Info </Button>
                                     </Col>
                                     <Col md="6">
-                                        <Button onClick={() => functions.addToBasket(product=product)} className="mt-3 btn btn-success btn-product text-nowrap">Add to Basket </Button>
+                                        <Button onClick={() => functions.addToBasket(product)} className="mt-3 btn btn-success btn-product text-nowrap">Add to Basket </Button>
                                     </Col>
                                 </Row>
                             </Row>

@@ -1,4 +1,5 @@
 import data from "./Data/data.json";
+
 const productData = data.productList;
 
 export const calculateBasketTotalPrice = () => {
@@ -15,6 +16,18 @@ export const calculateBasketTotalPrice = () => {
 export const checkOutBasket = () => {
     localStorage.removeItem("product");
     localStorage.removeItem("id");
+}
+
+export const getActiveFilters = () => {
+    const filterList = document.getElementsByClassName("filter")
+    let activeFilters = []
+
+    for (let i = 0; i < filterList.length; ++i)
+        if (!filterList[i].checked) activeFilters.push(filterList[i].value)
+
+    if (activeFilters.length === filterList.length) activeFilters = []
+
+    return activeFilters;
 }
 
 export const removeFromBasket = (productId) => {

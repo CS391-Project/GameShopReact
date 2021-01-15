@@ -1,11 +1,10 @@
 // Basic Imports
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Switch, Route, Link, withRouter} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 // Other Imports
 import './App.css';
 import MoreInfoPage from "./Components/MoreInfoPage";
-import {Button, Container, Row, Col} from 'reactstrap';
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Basket from "./Components/Basket";

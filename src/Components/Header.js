@@ -1,16 +1,7 @@
-import React, { useState } from 'react';
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-} from 'reactstrap';
-import { NavLink as RRNavLink, useLocation } from 'react-router-dom';
-
-const Header = ({props}) => {
+import React, {useState} from 'react';
+import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} from 'reactstrap';
+// import { NavLink } from 'react-router-dom'
+const Header = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);

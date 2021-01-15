@@ -3,7 +3,6 @@ import {Button, Col, Container, Row} from "reactstrap";
 import {useHistory} from "react-router-dom";
 import * as functions from "../functions";
 
-
 const Item = (props) => {
     const history = useHistory();
     const goToPage = (pageName) => history.push(pageName);
@@ -12,7 +11,7 @@ const Item = (props) => {
         <Container className='pb-4 mt-4 card'>
             <Row className="p-3">
                 <Col sm="12" md="6">
-                    <img src={process.env.PUBLIC_URL + "/images/" + props.item.link} alt="Responsive image"/>
+                    <img src={process.env.PUBLIC_URL + "/images/" + props.item.link} alt={props.item.name}/>
                 </Col>
                 <Col sm="12" md="6">
                     <h1> {props.item.name} </h1>

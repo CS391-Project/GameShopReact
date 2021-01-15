@@ -25,7 +25,7 @@ const Basket = () => {
                 <>
                     <Row>
                         {products.map((item, i) => (
-                            <Item item={item} isBasketPage={true} removeProductBasketPage={removeProductBasketPage}/>
+                            <Item item={item} key={item.id} isBasketPage={true} removeProductBasketPage={removeProductBasketPage}/>
                         ))}
                     </Row>
                     <Row className="mt-5">
