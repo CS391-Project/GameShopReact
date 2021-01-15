@@ -1,40 +1,41 @@
-import React from "react"
-import {Link} from "react-router-dom";
+import React, { useState } from 'react';
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+} from 'reactstrap';
+import { NavLink as RRNavLink, useLocation } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({props}) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () => setIsOpen(!isOpen);
+
     return (
-        <header id={"navigation"}>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="container-fluid">
-                    {/*site name*/}
-                    <a className="navbar-brand" href="/">Game Shop</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                {/*ref forhome page*/}
-                                <a className="nav-link active" aria-current="page" href="/">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                {/*basket page reference*/}
-                                <a className="nav-link" href="/basket">Basket</a>
-                            </li>
-                            <li className="nav-item dropdown">
-                                {/*loginpage reference*/}
-                                <a className="nav-link" href="/login">Login</a>
-
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <div className="pb-2">
+            <Navbar color="light" light expand="md">
+                <NavbarBrand href="/">GameShop</NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav className="mr-auto" navbar>
+                        <NavItem>
+                            <NavLink href="/" activeClassName="active" exact path="/">Shop</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/basket" activeClassName="active" exact path="/">Basket</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/login" activeClassName="active" exact path="/">Login</NavLink>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
+            </Navbar>
+        </div>
     );
 }
 
-export default Header
+export default Header;

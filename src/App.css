@@ -16,36 +16,30 @@ html, body {
 
 /*responsive elements of more info page*/
 
+.btn {
+  font-weight: 500 !important;
+}
 
-.fullwidth {
+.textFooter{
+  color: lightgray;
+  font-weight: bold;
+}
+
+.fullWidth {
   width: 100%;
 
 }
 .caption {
   width: 100%;
 }
+
 header {
   padding-bottom: 15px;
 }
 
-
 .thumbnail {
   padding-bottom: 20px;
 }
-
-@media (max-width: 479px) {
-  .infodiv{
-    font-size: 30px;
-  }
-}
-
-@media (min-width: 720px) {
-  .infodiv {
-
-    font-size: 30px;
-  }
-}
-
 
 .container {
   width: auto;

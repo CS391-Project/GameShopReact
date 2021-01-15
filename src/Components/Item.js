@@ -9,8 +9,8 @@ const Item = (props) => {
     const goToPage = (pageName) => history.push(pageName);
 
     return (
-        <Container className='pb-4'>
-            <Row>
+        <Container className='pb-4 mt-4 card'>
+            <Row className="p-3">
                 <Col sm="12" md="6">
                     <img src={process.env.PUBLIC_URL + "/images/" + props.item.link} alt="Responsive image"/>
                 </Col>
@@ -22,8 +22,8 @@ const Item = (props) => {
                         ?
                         <>
                             <h2> Count: {props.item.count} </h2>
-                            <Button onClick={() => (null)}
-                                    className="mt-3 p-3 fullwidth btn btn-danger btn-product text-nowrap ml-3"> Remove </Button>
+                            <Button onClick={() => (props.removeProductBasketPage(props.item.id))}
+                                    className="mt-3 p-3 btn btn-block btn-danger btn-product text-nowrap ml-3"> Remove </Button>
                         </>
                         :
                         <>
@@ -43,7 +43,7 @@ const Item = (props) => {
                     }
                 </Col>
             </Row>
-            <Row className='pt-4'>
+            <Row className='pt-4 p-3'>
                 <p>{props.item.description}</p>
             </Row>
         </Container>

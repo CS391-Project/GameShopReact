@@ -1,6 +1,6 @@
 // Basic Imports
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link, withRouter} from "react-router-dom";
 
 // Other Imports
 import './App.css';
@@ -11,6 +11,7 @@ import Footer from "./Components/Footer";
 import Basket from "./Components/Basket";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
+
 
 class App extends Component {
     render() {

@@ -4,7 +4,7 @@ function Footer(){
     return(
         <footer className="footer mt-auto py-3 bg-dark">
             <div className="container">
-                <span className="text-muted">Best games for best prices</span>
+                <span className="text-center textFooter">Best games for best prices</span>
             </div>
         </footer>)
 }

@@ -1,6 +1,39 @@
 import data from "./Data/data.json";
 const productData = data.productList;
 
+export const calculateBasketTotalPrice = () => {
+    const allProducts = getAllProducts();
+    let totalPrice = 0.0;
+
+    for (let product of allProducts) {
+        console.log(product)
+        totalPrice += product.count * product.price
+    }
+    return totalPrice;
+}
+
+export const checkOutBasket = () => {
+    localStorage.removeItem("product");
+    localStorage.removeItem("id");
+}
+
+export const removeFromBasket = (productId) => {
+    const productKey = localStorage.getItem("product")
+    let productIDs;
+
+    if (productKey) {
+        productIDs = productKey.split(',')
+
+        if (productIDs.includes(productId.toString())) {
+            productIDs.splice(productIDs.indexOf(productId.toString()), 1);
+        }
+        const mergedProducts = productIDs.join(',');
+        localStorage.setItem("product", mergedProducts);
+
+        return getAllProducts();
+    }
+}
+
 export const addToBasket = (product) => {
     if (product) {
         localStorage.setItem("id", product.id)
@@ -20,7 +53,6 @@ export const addToBasket = (product) => {
     localStorage.setItem("product", text);
 
     alert('Added to basket !')
-
 }
 
 // return selected item
@@ -32,34 +64,6 @@ export const getItem = () => {
             return productData[i]
         }
     }
-}
-
-export const getProductCount = () => {
-    const products = localStorage.getItem("product");
-    let text;
-
-    if (products) {
-        text = products
-        text += ','
-        text += localStorage.getItem("id")
-    } else {
-        text = localStorage.getItem("id")
-    }
-}
-
-export const removeFromBasket = (productId) => {
-    /*   const allProducts = getProducts();
-
-       if (allProducts.includes(productId.toString())) {
-           allProducts.splice(allProducts.indexOf(productId.toString()), 1);
-       }
-       const mergedProducts = allProducts.join(',');
-       localStorage.setItem("product",mergedProducts);
-
-       // showBasket();
-       // displayTotal() */
-
-    alert('Added to basket !')
 }
 
 export const getAllProducts = () => {

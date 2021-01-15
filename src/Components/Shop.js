@@ -42,7 +42,7 @@ const Shop = (props) => {
                                     </Row>
                                     <p><b>Category:</b> {product.category}</p>
                                 </div>
-                                <Row className='fullwidth'>
+                                <Row className='fullWidth'>
                                     <Col md="6">
                                         <Button onClick={() => goToMoreInfoPage(product)} className="mt-3 btn btn-info btn-product text-nowrap" >More Info </Button>
                                     </Col>
