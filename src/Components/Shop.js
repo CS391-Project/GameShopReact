@@ -39,12 +39,10 @@ const Shop = (props) => {
                                 </div>
                                 <Row className='fullwidth'>
                                     <Col md="6">
-                                        <Button  onClick={() => buttonAction(product)} className="btn btn-primary btn-product text-nowrap" ><span
-                                            className="glyphicon glyphicon-thumbs-up"></span> More Info </Button>
+                                        <Button  onClick={() => buttonAction(product)} className="btn btn-primary btn-product text-nowrap" >More Info </Button>
                                     </Col>
                                     <Col md="6">
-                                        <Button href="#" className="btn btn-success btn-product text-nowrap"><span
-                                            className="glyphicon glyphicon-shopping-cart"></span> Add to Basket </Button>
+                                        <Button href="#" className="btn btn-success btn-product text-nowrap">Add to Basket </Button>
                                     </Col>
                                 </Row>
                             </Row>

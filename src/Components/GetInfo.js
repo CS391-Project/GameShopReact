@@ -11,7 +11,7 @@ const GetInfo = (props) => {
                 </Col>
                 <Col sm="12" md="6">
                     <h1> Name: {props.product.name} </h1>
-                    <h2>Price: {props.product.price} </h2>
+                    <h2>Price: {props.product.price} TL</h2>
                     <h2> Category: {props.product.category} </h2>
                     <button type="button" className='mt-5' onClick={()=>{AddToBasket(); alert('Added to basket');}}>Add to basket</button>
                 </Col>
