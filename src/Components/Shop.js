@@ -3,15 +3,20 @@ import {Media, Button} from "reactstrap";
 import data from "../Data/data.json";
 import {useHistory} from "react-router-dom";
 import {Container, Row, Col} from 'reactstrap';
+import * as functions from "../functions";
 
 const Shop = (props) => {
     const history = useHistory();
     const goToPage = (pageName) => history.push(pageName);
     const productData = data.productList;
 
-    const buttonAction = (props) => {
+    const goToMoreInfoPage = (props) => {
         localStorage.setItem("id", props.id)
         goToPage('moreInfoPage')
+    }
+
+    const shopToBasket = (props) => {
+        localStorage.setItem("id", props.id)
     }
 
     return (
@@ -19,6 +24,10 @@ const Shop = (props) => {
             <h2>Shop</h2>
             <Container>
                 <Row>
+                    {!productData.length
+                    && <h1>No Products</h1>
+                    }
+
                     {productData.filter((product) => !(props.activeFilters.includes(product.category))).map((product, i) => (
                         <Col sm="6" md="4">
                             <Row className="thumbnail">
@@ -39,10 +48,10 @@ const Shop = (props) => {
                                 </div>
                                 <Row className='fullwidth'>
                                     <Col md="6">
-                                        <Button  onClick={() => buttonAction(product)} className="btn btn-primary btn-product text-nowrap" >More Info </Button>
+                                        <Button onClick={() => goToMoreInfoPage(product)} className="mt-3 btn btn-info btn-product text-nowrap" >More Info </Button>
                                     </Col>
                                     <Col md="6">
-                                        <Button href="#" className="btn btn-success btn-product text-nowrap">Add to Basket </Button>
+                                        <Button onClick={() => functions.addToBasket(product=product)} className="mt-3 btn btn-success btn-product text-nowrap">Add to Basket </Button>
                                     </Col>
                                 </Row>
                             </Row>

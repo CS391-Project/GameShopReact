@@ -3,20 +3,6 @@ import {Link} from "react-router-dom";
 
 const Header = () => {
     return (
-        //old header
-        // <div>
-        // <header id="navigation">
-        //
-        // <h1>Game Shop</h1>
-        //
-        // <Link to="/">Home </Link>
-        // <Link to="/basket">Basket </Link>
-        // <Link to="/login">Login</Link>
-        //
-        // </header>
-        // </div>
-
-        //new Header
         <header id={"navigation"}>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">

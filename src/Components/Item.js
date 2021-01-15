@@ -1,27 +1,12 @@
 import React from "react"
 import {Button, Col, Container, Row} from "reactstrap";
 import {useHistory} from "react-router-dom";
+import * as functions from "../functions";
 
 
 const Item = (props) => {
     const history = useHistory();
     const goToPage = (pageName) => history.push(pageName);
-
-    const addToBasket = () => {
-        const products = localStorage.getItem("product");
-
-        if (products) {
-            var text = products
-            text += ','
-            text += localStorage.getItem("id")
-        } else {
-            text = localStorage.getItem("id")
-        }
-
-        localStorage.setItem("product", text);
-
-        alert('Added to basket !')
-    }
 
     return (
         <Container className='pb-4'>
@@ -36,6 +21,7 @@ const Item = (props) => {
                     {props.isBasketPage
                         ?
                         <>
+                            <h2> Count: {props.item.count} </h2>
                             <Button onClick={() => (null)}
                                     className="mt-3 p-3 fullwidth btn btn-danger btn-product text-nowrap ml-3"> Remove </Button>
                         </>
@@ -43,7 +29,7 @@ const Item = (props) => {
                         <>
                             <Row>
                                 <Col md="6" xs="12">
-                                    <Button onClick={() => addToBasket()}
+                                    <Button onClick={() => functions.addToBasket()}
                                             className="p-3 mt-3 btn btn-info btn-product text-nowrap"> Add to
                                         Basket </Button>
                                 </Col>
@@ -59,7 +45,6 @@ const Item = (props) => {
             </Row>
             <Row className='pt-4'>
                 <p>{props.item.description}</p>
-
             </Row>
         </Container>
     );
