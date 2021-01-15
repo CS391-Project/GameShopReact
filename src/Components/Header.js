@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} from 'reactstrap';
-// import { NavLink } from 'react-router-dom'
-const Header = (props) => {
+import { NavLink as ReactLink } from 'react-router-dom'; // reactstrap navlink wont detect active, so we have to use both
+
+const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -14,13 +15,13 @@ const Header = (props) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/" activeClassName="active">Shop</NavLink>
+                            <NavLink tag={ReactLink} exact to="/" activeClassName="active" >Shop</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/basket" activeClassName="active">Basket</NavLink>
+                            <NavLink tag={ReactLink} to="/basket" activeClassName="active" >Basket</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/login" activeClassName="active">Login</NavLink>
+                            <NavLink tag={ReactLink} to="/login" activeClassName="active" >Login</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
