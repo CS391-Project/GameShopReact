@@ -11,7 +11,7 @@ const Shop = (props) => {
 
     const goToMoreInfoPage = (props) => {
         localStorage.setItem("id", props.id)
-        goToPage('moreInfoPage')
+        goToPage('more_info')
     }
 
     return (
