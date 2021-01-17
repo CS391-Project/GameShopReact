@@ -82,6 +82,8 @@ Case 3:
 > Choose Basket from the navigation
 >
 > Click on Checkout for complete purchase of selected items
+>
+> Click on Sign Out button
 
 Case 4:
 
