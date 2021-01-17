@@ -16,6 +16,11 @@ const Login = () => {
     const goToSignupPage = () => {
         goToPage('SignUp')
     }
+	
+	 const goToShopPage = () => {
+        goToPage('')
+    }
+	
     return (
       <Container className="Login">
         <h2>Sign In</h2>
@@ -44,7 +49,7 @@ const Login = () => {
           </Col>
 		  <Row className='fullWidth'>
 				<Col md="6">
-					<Button onClick={() => goToSignupPage()} className="mt-3 btn btn-info btn-product text-nowrap" >Login</Button>
+					<Button onClick={() => goToShopPage()} className="mt-3 btn btn-info btn-product text-nowrap" >Login</Button>
 				</Col>
 				<Col md="6">
 					<Button onClick={() => goToSignupPage()} className="mt-3 btn btn-success btn-product text-nowrap">Sign up </Button>
