@@ -1,19 +1,7 @@
-import React, {Component, useState} from 'react';
-import data from "../Data/data.json";
-import {useHistory} from "react-router-dom";
+import React, {useState} from 'react';
 import * as functions from "../functions";
 
-import {
-    Container, Col, Form,
-    FormGroup, Label, Input,
-    Button, Row, InputGroup,
-} from 'reactstrap';
-import Item from "./Item";
-
 const SignUp = () => {
-    const history = useHistory();
-    const goToPage = (pageName) => history.push(pageName);
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rePassword, setRePassword] = useState('');
@@ -44,7 +32,7 @@ const SignUp = () => {
                 const loginResult = functions.loginUser(email, password);
 
                 if (loginResult) {
-                    goToPage('/')
+                    window.location.href = "/";
                 } else {
                     alert('Autologin failed !')
                 }

@@ -1,19 +1,6 @@
 import React, {useState} from 'react';
-import {
-    Button,
-    Col,
-    Collapse,
-    Container,
-    Nav,
-    Navbar,
-    NavbarBrand,
-    NavbarToggler,
-    NavItem,
-    NavLink,
-    Row
-} from 'reactstrap';
-import { NavLink as ReactLink } from 'react-router-dom'; // reactstrap navlink wont detect active, so we have to use both
-import Item from "./Item";
+import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} from 'reactstrap';
+import {NavLink as ReactLink} from 'react-router-dom'; // reactstrap navlink wont detect active, so we have to use both
 import * as functions from "../functions";
 
 const Header = () => {

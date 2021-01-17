@@ -1,19 +1,7 @@
-import React, {Component, useState} from 'react';
-import data from "../Data/data.json";
-import {useHistory} from "react-router-dom";
+import React, {useState} from 'react';
 import * as functions from "../functions";
 
-import {
-    Container, Col, Form,
-    FormGroup, Label, Input,
-    Button, Row, InputGroup,
-} from 'reactstrap';
-import Item from "./Item";
-
 const Login = () => {
-    const history = useHistory();
-    const goToPage = (pageName) => history.push(pageName);
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -26,7 +14,7 @@ const Login = () => {
 
         if (loginResult) {
             alert("Login successful. Redirecting to shop !");
-            goToPage('/')
+            window.location.href = "/";
         } else {
             alert("Email or password is incorrect.");
         }

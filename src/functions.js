@@ -1,7 +1,6 @@
 import data from "./Data/data.json";
 
 const productData = data.productList;
-const userData = data.userList;
 
 export const calculateBasketTotalPrice = () => {
     const allProducts = getAllProducts();

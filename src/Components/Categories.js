@@ -1,5 +1,5 @@
 import React from "react"
-import {Button, Container, Row, Col} from "reactstrap";
+import {Button, Col, Container, Row} from "reactstrap";
 import data from "../Data/data.json";
 
 const categoryData = data.categoryList;
