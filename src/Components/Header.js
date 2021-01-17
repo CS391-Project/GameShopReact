@@ -23,6 +23,9 @@ const Header = () => {
                         <NavItem>
                             <NavLink tag={ReactLink} to="/login" activeClassName="active" >Login</NavLink>
                         </NavItem>
+						<NavItem>
+                            <NavLink tag={ReactLink} to="/signup" activeClassName="active" >SignUp</NavLink>
+                        </NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>

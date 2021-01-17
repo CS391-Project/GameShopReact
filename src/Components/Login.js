@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
-
+import data from "../Data/data.json";
+import {useHistory} from "react-router-dom";
+import * as functions from "../functions";
 import {
   Container, Col, Form,
   FormGroup, Label, Input,
   Button, Row,
 } from 'reactstrap';
 
-class Login extends Component {
-  render() {
+
+const Login = () => {
+	const history = useHistory();
+    const goToPage = (pageName) => history.push(pageName);
+    const productData = data.productList;
+
+    const goToSignupPage = () => {
+        goToPage('SignUp')
+    }
     return (
       <Container className="Login">
         <h2>Sign In</h2>
@@ -36,16 +45,15 @@ class Login extends Component {
           </Col>
 		  <Row className='fullWidth'>
 				<Col md="6">
+					<Button onClick={() => goToSignupPage()} className="mt-3 btn btn-info btn-product text-nowrap" >Login</Button>
 				</Col>
 				<Col md="6">
+					<Button onClick={() => goToSignupPage()} className="mt-3 btn btn-success btn-product text-nowrap">Sign up </Button>
 				</Col>
 			</Row>
-          <Button>Login</Button>
-		  <Button>Create Account</Button>
         </Form>
       </Container>
     );
-  }
 }
 
-export default Login;
+export default Login
