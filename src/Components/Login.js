@@ -8,8 +8,6 @@ const Login = () => {
     const formSubmitHandler = (event) => {
         event.preventDefault();
 
-        console.log(event)
-
         const loginResult = functions.loginUser(email, password);
 
         if (loginResult) {

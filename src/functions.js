@@ -7,7 +7,6 @@ export const calculateBasketTotalPrice = () => {
     let totalPrice = 0.0;
 
     for (let product of allProducts) {
-        console.log(product)
         totalPrice += product.count * product.price
     }
     return totalPrice;
@@ -132,7 +131,6 @@ export const registerUser = (email, password, firstName, lastName) => {
 
         for (let user of existingUsers) {
             const emailCheck = user.split(";")[0];
-            console.log(emailCheck, email)
             if (emailCheck === email) {
                 return false;
             }
