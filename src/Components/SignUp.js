@@ -23,16 +23,30 @@ const SignUp = () => {
         goToPage('')
     }
 	
-	const validatePassword = (pass1, pass2) => {
-		if(pass1.length < 6 || pass2.length < 6) {
+	const validate = (mail, pass1, pass2) => {
+		if(!mail.includes('@')){
+			alert("Please enter a valid e-mail.")
+		}
+		else if(!mail.includes("edu.tr") && !mail.includes("email.com") && !mail.includes("gmail.com")){
+			alert("Please enter edu.tr, gmail.com or email.com")
+		}
+		else if(pass1.length < 6 || pass2.length < 6) {
 			alert("Password size shoul be at least 6.")
+		}
+		else if(!hasUpperCase(pass1) || !hasUpperCase(pass2)) {
+			alert("Passwords should include at least on upper case")
 		}
 	    else if(pass1 != pass2){
 			alert("Passwords do not match.")
-		} else {
+		}
+		else {
 			goToShopPage()
 		}
     }
+	
+	function hasUpperCase(str) {
+		return str.match(/[A-Z]/);
+	}
 	
     return (
       <Container className="SignUp">
@@ -44,7 +58,7 @@ const SignUp = () => {
               <Input
                 type="email"
                 name="email"
-                id="exampleEmail"
+                id="exampleEmail1"
                 placeholder="myemail@email.com"
               />
             </FormGroup>
@@ -73,7 +87,7 @@ const SignUp = () => {
           </Col>
           <Row className='fullWidth'>
 				<Col md="6">
-					<Button onClick={() => validatePassword(document.getElementById('examplePassword1').value, document.getElementById('examplePassword2').value)} className="mt-3 btn btn-info btn-product text-nowrap" >Sign Up</Button>
+					<Button onClick={() => validate(document.getElementById('exampleEmail1').value, document.getElementById('examplePassword1').value, document.getElementById('examplePassword2').value)} className="mt-3 btn btn-info btn-product text-nowrap" >Sign Up</Button>
 				</Col>
 				<Col md="6">
 					<Button onClick={() => goToLoginPage()} className="mt-3 btn btn-success btn-product text-nowrap">Login</Button>
