@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-
 import {
   Container, Col, Form,
   FormGroup, Label, Input,
-  Button, Row,
+  Button,
 } from 'reactstrap';
 
-class Login extends Component {
+class SignUp extends Component {
   render() {
     return (
-      <Container className="Login">
+      <Container className="SignUp">
         <h2>Sign In</h2>
         <Form className="form">
           <Col>
@@ -34,18 +33,12 @@ class Login extends Component {
               />
             </FormGroup>
           </Col>
-		  <Row className='fullWidth'>
-				<Col md="6">
-				</Col>
-				<Col md="6">
-				</Col>
-			</Row>
-          <Button>Login</Button>
-		  <Button>Create Account</Button>
+          <Button>Create Account</Button>
+		  <Button>Login</Button>
         </Form>
       </Container>
     );
   }
 }
 
-export default Login;
+export default SignUp;
