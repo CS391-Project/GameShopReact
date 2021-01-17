@@ -12,7 +12,6 @@ import {
 const Login = () => {
 	const history = useHistory();
     const goToPage = (pageName) => history.push(pageName);
-    const productData = data.productList;
 
     const goToSignupPage = () => {
         goToPage('SignUp')
