@@ -4,10 +4,10 @@ This repository was created for CS 391 course project 2.
 
 | Member | Task |
 | ------- | ----- |
-| Cenker Karaörs | Creation of home page. |
-| Denizcan Özpınar | Creation of item information page. |
-| Ertan Ayanlar | Creation of shopping cart. Design and code base improvements. |
-| Furkan Karayer | Login page
+| Cenker Karaörs | Implemented home page, SignUp, and Login page improvements. Added email and password checks before login. Registering users to Local Storage and comparing them with existing users implemented.|
+| Denizcan Özpınar | Implemented more info page, header, and footer improvements.|
+| Ertan Ayanlar | Improved design of the shop and more info, made them responsive. Moved all components to react hooks style. Moved all utility functions and grouped them in a single file 'functions.js' Implemented and designed basket page. |
+| Furkan Karayer | Login and SignUp page implemented. |
 
 ## What is Game Shop React?
 
@@ -67,6 +67,40 @@ Case 2:
 >
 > Click on Checkout for complete purchase of selected items
 
+Case 3:
+
+> npm start
+>
+> Click on SignUp and register a user. (Note password must be longer than 6 characters and must include an uppercase character)
+>
+> Press register button.
+>
+> Click on Login and enter credentials.
+>
+> Select desired products using the Info button
+>
+> Click on Add to basket ( Same product can be added to basket multiple times)
+>
+> Choose Basket from the navigation
+>
+> Click on Checkout for complete purchase of selected items
+
+Case 4:
+
+> npm start
+>
+> Click on SignUp and register two user. (Note password must be longer than 6 characters and must include an uppercase character)
+>
+> Click on Login and enter wrong credentials. (Email or password is incorrect will be displayed)
+>
+> Enter correct credentials and login.
+>
+> Choose a product and click on Add to basket ( Same product can be added to basket multiple times)
+>
+> Choose Basket from the navigation.
+>
+> Click on Checkout for complete purchase of selected items.
+
 
 ## Note for contributors
 
@@ -83,4 +117,5 @@ Dear members, please use branches to contribute. (Do not forget to pull recent c
 ## React Commands
 1)  npx create-react-app my-Apply (Setup sample)
 2)  cd GameShopReact
-3)  npm start
+3)  npm install
+4)  npm start
