@@ -10,6 +10,7 @@ import Footer from "./Components/Footer";
 import Basket from "./Components/Basket";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
+import SignUp from "./Components/SignUp";
 
 
 class App extends Component {
@@ -22,6 +23,8 @@ class App extends Component {
                         <Route path="/basket"><Basket/></Route>
 
                         <Route path="/login"><Login/></Route>
+						
+						<Route path="/signup"><SignUp/></Route>
 
                         <Route path="/more_info"> <MoreInfoPage/> </Route>
 

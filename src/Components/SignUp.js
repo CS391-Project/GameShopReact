@@ -9,16 +9,16 @@ import {
 } from 'reactstrap';
 
 
-const Login = () => {
-	const history = useHistory();
+const SignUp = () => {
+  const history = useHistory();
     const goToPage = (pageName) => history.push(pageName);
     const productData = data.productList;
 
-    const goToSignupPage = () => {
-        goToPage('SignUp')
+    const goToLoginPage = () => {
+        goToPage('Login')
     }
     return (
-      <Container className="Login">
+      <Container className="SignUp">
         <h2>Sign In</h2>
         <Form className="form">
           <Col>
@@ -43,12 +43,12 @@ const Login = () => {
               />
             </FormGroup>
           </Col>
-		  <Row className='fullWidth'>
+          <Row className='fullWidth'>
 				<Col md="6">
-					<Button onClick={() => goToSignupPage()} className="mt-3 btn btn-info btn-product text-nowrap" >Login</Button>
+					<Button onClick={() => goToLoginPage()} className="mt-3 btn btn-info btn-product text-nowrap" >Sign Up</Button>
 				</Col>
 				<Col md="6">
-					<Button onClick={() => goToSignupPage()} className="mt-3 btn btn-success btn-product text-nowrap">Sign up </Button>
+					<Button onClick={() => goToLoginPage()} className="mt-3 btn btn-success btn-product text-nowrap">Login</Button>
 				</Col>
 			</Row>
         </Form>
@@ -56,4 +56,4 @@ const Login = () => {
     );
 }
 
-export default Login
+export default SignUp
