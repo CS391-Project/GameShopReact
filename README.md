@@ -6,8 +6,8 @@ This repository was created for CS 391 course project 2.
 | ------- | ----- |
 | Cenker Karaörs | Creation of home page. |
 | Denizcan Özpınar | Creation of item information page. |
-| Ertan Ayanlar | Creation of shopping cart. |
-| Furkan Karayer | Login page and design improvments
+| Ertan Ayanlar | Creation of shopping cart. Design and code base improvements. |
+| Furkan Karayer | Login page
 
 ## What is Game Shop React?
 
