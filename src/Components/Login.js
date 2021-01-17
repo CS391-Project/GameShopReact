@@ -1,100 +1,67 @@
-import React, { Component } from 'react';
+import React, {Component, useState} from 'react';
 import data from "../Data/data.json";
 import {useHistory} from "react-router-dom";
 import * as functions from "../functions";
 
 import {
-  Container, Col, Form,
-  FormGroup, Label, Input,
-  Button, Row, InputGroup,
+    Container, Col, Form,
+    FormGroup, Label, Input,
+    Button, Row, InputGroup,
 } from 'reactstrap';
+import Item from "./Item";
 
+const Login = () => {
+    const history = useHistory();
+    const goToPage = (pageName) => history.push(pageName);
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: ''
-    };
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-  }
+    const formSubmitHandler = (event) => {
+        event.preventDefault();
 
+        console.log(event)
 
-  mySubmitHandler = (event) => {
-    event.preventDefault();
+        const loginResult = functions.loginUser(email, password);
 
-
-    let email = this.state.email;
-    let password = this.state.password;
-
-    var current_list = localStorage.getItem("user_list");
-
-    if(current_list == null)
-    {
-      alert("Please Register.");
+        if (loginResult) {
+            alert("Login successful. Redirecting to shop !");
+            goToPage('/')
+        } else {
+            alert("Email or password is incorrect.");
+        }
     }
 
-    else
-    {
-      var existing_list = current_list.split(",");
-      var new_list = [];
-
-      var isMatced = 0;
-
-      for(var i=0; i<existing_list.length; i++)
-      {
-        var temp_user = existing_list[i].split(";");
-        new_list.push([existing_list[i]]);
-
-        if(temp_user[0] === email && temp_user[1] === password  ) isMatced = 1;
-
-      }
-
-      if(isMatced)
-      {
-        alert("Login Successful.");
-      }
-      else
-      {
-        alert("Email or password is incorrect.");
-      }
-
-    }
-
-  }
-
-  myChangeHandler = (event) => {
-    let nam = event.target.name;
-    let val = event.target.value;
-    this.setState({[nam]: val});
-  }
-  render() {
     return (
-      <form onSubmit={this.mySubmitHandler}>
+        <form onSubmit={formSubmitHandler}>
+            <div className="container pt-3">
+                <h2 className='text-center'>Login</h2>
 
-      <h2>Log In</h2>
+                <div className="row">
+                    <div className="col-sm-12">
+                        <label>Email</label>
+                        <div className="form-group pass_show">
+                            <input required className="form-control" placeholder="Email" type='email' value={email} name='email'
+                                   onChange={event => {
+                                       setEmail(event.target.value);
+                                   }}/>
+                        </div>
 
-      <p>Email:</p>
+                        <label>Password</label>
+                        <div className="form-group pass_show">
+                            <input required className="form-control" placeholder="Password" type='password' value={password}
+                                   name='password' onChange={event => {
+                                setPassword(event.target.value);
+                            }}/>
+                        </div>
 
-      <input type='text' name='email' onChange={this.myChangeHandler} />
-      
-      <br/><br/>
-
-      <p>Password</p>
-      <input type='password' name='password' onChange={this.myChangeHandler} />
-
-      <br/><br/>
-
-      <input type='submit' value="Login" />
-
-      </form>
+                        <button type="submit" className="btn btn-block btn-success">Login</button>
+                    </div>
+                </div>
+            </div>
+        </form>
     );
-  }
 }
 
-function hasUpperCase(str) {
-  return str.match(/[A-Z]/);
-}
 
 export default Login

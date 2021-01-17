@@ -1,8 +1,4 @@
 {
-	"userList": [{
-            "mail": "furkankarayer@gmail.com",
-            "pass": "Password1"}],
-	
     "categoryList": [ "Rockstar", "Origin", "Steam", "Epic Games"],
     
     "productList": [ 

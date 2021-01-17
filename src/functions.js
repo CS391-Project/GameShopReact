@@ -111,6 +111,40 @@ export const getProductFromAllProducts = (allProducts, productId) => {
     }
 }
 
+export const validateEmail = (email) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+export const hasUpperCase = (str) => {
+    return str.match(/[A-Z]/);
+}
+
+export const registerUser = (email, password, firstName, lastName) => {
+    const currentUserList = localStorage.getItem("userList");
+
+    if (currentUserList == null) {
+        const userList = [];
+        userList.push([email.toLowerCase() + ";" + password + ";" + firstName + ";" + lastName]);
+        localStorage.setItem("userList", userList);
+        return true;
+    } else {
+        const existingUsers = currentUserList.split(",");
+
+        for (let user of existingUsers) {
+            const emailCheck = user.split(";")[0];
+            console.log(emailCheck, email)
+            if (emailCheck === email) {
+                return false;
+            }
+        }
+
+        existingUsers.push([email.toLowerCase() + ";" + password + ";" + firstName + ";" + lastName]);
+        localStorage.setItem("userList", existingUsers);
+        return true;
+    }
+}
+
 export const getProductDataAsObject = (productId) => {
     const productData = data.productList;
 
@@ -121,11 +155,40 @@ export const getProductDataAsObject = (productId) => {
     }
 }
 
-export const checkLogin = (mail, pass) => {
-    for (let user of userData) {
-        if (mail === user.mail && pass === user.pass) {
-            return true;
+export const loginUser = (email, password) => {
+    const currentUserList = localStorage.getItem("userList");
+
+    if (currentUserList == null) {
+        return false;
+    } else {
+        const existingUsers = currentUserList.split(",");
+
+        for (let user of existingUsers) {
+            const userInfo = user.split(";");
+
+            const userEmail = userInfo[0]
+            const userPassword = userInfo[1]
+
+            if (email.toLowerCase() === userEmail.toLowerCase() && userPassword === password) {
+                localStorage.setItem("currentUser", [email.toLowerCase()])
+                return true;
+            }
         }
+
+        return false;
     }
-	return false;
+}
+
+export const signOut = () => {
+    localStorage.removeItem("currentUser");
+}
+
+export const isLoggedIn = () => {
+    const currentUser = localStorage.getItem("currentUser");
+
+    if (currentUser == null) {
+        return false;
+    } else {
+        return true;
+    }
 }

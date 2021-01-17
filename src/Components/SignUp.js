@@ -1,145 +1,117 @@
-import React, { Component } from 'react';
+import React, {Component, useState} from 'react';
 import data from "../Data/data.json";
 import {useHistory} from "react-router-dom";
 import * as functions from "../functions";
 
 import {
-  Container, Col, Form,
-  FormGroup, Label, Input,
-  Button, Row, InputGroup,
+    Container, Col, Form,
+    FormGroup, Label, Input,
+    Button, Row, InputGroup,
 } from 'reactstrap';
+import Item from "./Item";
 
+const SignUp = () => {
+    const history = useHistory();
+    const goToPage = (pageName) => history.push(pageName);
 
-class SignUp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-      rePassword: '',
-      firstName: '',
-      lastName: ''
-    };
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [rePassword, setRePassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
 
+    const formSubmitHandler = (event) => {
+        event.preventDefault();
 
+        if (!functions.validateEmail(email)) {
+            alert("Please enter a valid e-mail.")
+        } else if (password.length < 6) {
+            alert("Password size should be at least 6.")
+        } else if (password !== rePassword) {
+            alert("Passwords do not match.")
+        } else if (!functions.hasUpperCase(password) || !functions.hasUpperCase(rePassword)) {
+            alert("Passwords should include at least one upper case alphabeth character.")
+        } else if (!firstName) {
+            alert("First name cannot be empty !")
+        } else if (!lastName) {
+            alert("Last name cannot be empty !")
+        } else {
+            const success = functions.registerUser(email, password, firstName, lastName);
 
-  }
+            if (success) {
+                alert("Successfully registered and logged in ! Redirecting you to the shop page...");
 
+                const loginResult = functions.loginUser(email, password);
 
-  mySubmitHandler = (event) => {
-    event.preventDefault();
-
-
-    let email = this.state.email;
-    let password = this.state.password;
-    let rePassword = this.state.rePassword
-    let firstName = this.state.firstName;
-    let lastName = this.state.lastName;
-
-		if(!email.includes('@')){
-			alert("Please enter a valid e-mail.")
-		}
-		else if(!email.includes("edu.tr") && !email.includes("email.com") && !email.includes("gmail.com")){
-			alert("Please enter edu.tr, gmail.com or email.com")
-		}
-		else if(password.length < 6 || rePassword.length < 6) {
-			alert("Password size shoul be at least 6.")
-		}
-		else if(!hasUpperCase(password) || !hasUpperCase(rePassword)) {
-			alert("Passwords should include at least on upper case")
-		}
-	    else if(password !== rePassword){
-			alert("Passwords do not match.")
-    }
-    else {
-
-      var current_list = localStorage.getItem("user_list");
-
-      if(current_list == null)
-      {
-        var user_list = [];
-        user_list.push([email+ ";" + password + ";" + firstName + ";" + lastName]);
-        localStorage.setItem("user_list", user_list);
-      }
-
-      else
-      {
-        var existing_list = current_list.split(",");
-        var new_list = [];
-
-
-        var isNew = 1;
-
-        for(var i=0; i<existing_list.length; i++)
-        {
-          var temp_user = existing_list[i].split(";");
-          new_list.push([existing_list[i]]);
-
-          if(temp_user[0] === email) isNew = 0;
-
+                if (loginResult) {
+                    goToPage('/')
+                } else {
+                    alert('Autologin failed !')
+                }
+            } else {
+                alert("A user with this email already exists. Please choose a different email.");
+            }
         }
-
-
-        if(isNew)
-        {
-          new_list.push([email+ ";" + password + ";" + firstName + ";" + lastName]);
-          localStorage.setItem("user_list", new_list);
-        }
-
-        else alert("This user already exists.");
-      }
-
     }
 
-  }
-
-  myChangeHandler = (event) => {
-    let nam = event.target.name;
-    let val = event.target.value;
-    this.setState({[nam]: val});
-  }
-  render() {
     return (
-      <form onSubmit={this.mySubmitHandler}>
 
-      <h2>Register User</h2>
+        <form onSubmit={formSubmitHandler}>
+            <div className="container pt-3">
+                <h2 className='text-center'>Register</h2>
 
-      <p>Email:</p>
+                <div className="row">
+                    <div className="col-sm-12">
+                        <label>Email</label>
+                        <div className="form-group pass_show">
+                            <input required className="form-control" placeholder="Email" type='email' value={email} name='email' onChange={event => {
+                                setEmail(event.target.value);
+                            }}/>
+                        </div>
 
-      <input type='text' name='email' onChange={this.myChangeHandler} />
-      
-      <br/><br/>
+                        <label>Password</label>
+                        <div className="form-group pass_show">
+                            <input required className="form-control" placeholder="Password" type='password' value={password} name='password' onChange={event => {
+                                setPassword(event.target.value);
+                            }}/>
+                        </div>
 
-      <p>Password</p>
-      <input type='password' name='password' onChange={this.myChangeHandler} />
+                        <label>Re-enter Password</label>
+                        <div className="form-group pass_show">
+                            <input required className="form-control" placeholder="Password" type='password' value={rePassword} name='repassword' onChange={event => {
+                                setRePassword(event.target.value);
+                            }}/>
+                        </div>
 
-      <br/><br/>
-      
-      <p>Re-Password</p>
-      <input type='password' name='rePassword' onChange={this.myChangeHandler} />
+                        <label>First Name</label>
+                        <div className="form-group pass_show">
+                            <input required className="form-control" placeholder="First Name" type='name' value={firstName} name='firstname' onChange={event => {
+                                setFirstName(event.target.value);
+                            }}/>
+                        </div>
+
+                        <label>Last Name</label>
+                        <div className="form-group pass_show">
+                            <input required className="form-control" placeholder="Last Name" type='name' value={lastName} name='lastname' onChange={event => {
+                                setLastName(event.target.value);
+                            }}/>
+                        </div>
+
+                        <button type="submit" className="btn btn-block btn-success">Register</button>
+                    </div>
+                </div>
+            </div>
 
 
-      <br/><br/>
 
-      <p>First Name</p>
-      <input type='text' name='firstName' onChange={this.myChangeHandler} />
-
-      <br/><br/>
-
-      <p>Last Name</p>
-      <input type='text' name='lastName' onChange={this.myChangeHandler} />      
-
-      <br/><br/>
-
-      <input type='submit' />
-
-      </form>
+        </form>
     );
-  }
 }
 
-function hasUpperCase(str) {
-  return str.match(/[A-Z]/);
-}
+
+
 
 export default SignUp
+
+
+
