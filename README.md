@@ -75,8 +75,6 @@ Case 3:
 >
 > Press register button.
 >
-> Click on Login and enter credentials.
->
 > Select desired products using the Info button
 >
 > Click on Add to basket ( Same product can be added to basket multiple times)
