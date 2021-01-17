@@ -1,6 +1,7 @@
 import data from "./Data/data.json";
 
 const productData = data.productList;
+const userData = data.userList;
 
 export const calculateBasketTotalPrice = () => {
     const allProducts = getAllProducts();
@@ -118,4 +119,13 @@ export const getProductDataAsObject = (productId) => {
             return product;
         }
     }
+}
+
+export const checkLogin = (mail, pass) => {
+    for (let user of userData) {
+        if (mail === user.mail && pass === user.pass) {
+            return true;
+        }
+    }
+	return false;
 }

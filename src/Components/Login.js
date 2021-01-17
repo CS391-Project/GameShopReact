@@ -17,8 +17,13 @@ const Login = () => {
         goToPage('SignUp')
     }
 	
-	 const goToShopPage = () => {
-        goToPage('')
+	 const goToShopPage = (mail, pass) => {
+		
+		if(!functions.checkLogin(mail, pass)) {
+			alert("E-mail and password do not match.")			
+		} else {
+			goToPage('')			
+		}
     }
 	
     return (
@@ -31,7 +36,7 @@ const Login = () => {
               <Input
                 type="email"
                 name="email"
-                id="exampleEmail"
+                id="exampleEmail1"
                 placeholder="myemail@email.com"
               />
             </FormGroup>
@@ -42,14 +47,14 @@ const Login = () => {
               <Input
                 type="password"
                 name="password"
-                id="examplePassword"
+                id="examplePassword1"
                 placeholder="********"
               />
             </FormGroup>
           </Col>
 		  <Row className='fullWidth'>
 				<Col md="6">
-					<Button onClick={() => goToShopPage()} className="mt-3 btn btn-info btn-product text-nowrap" >Login</Button>
+					<Button onClick={() => goToShopPage(document.getElementById('exampleEmail1').value, document.getElementById('examplePassword1').value)} className="mt-3 btn btn-info btn-product text-nowrap" >Login</Button>
 				</Col>
 				<Col md="6">
 					<Button onClick={() => goToSignupPage()} className="mt-3 btn btn-success btn-product text-nowrap">Sign up </Button>
